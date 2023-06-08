@@ -1,6 +1,6 @@
 # DisCo-CLIP
 
-Official PyTorch implementation of the paper "DisCo-CLIP: A Distributed Contrastive Loss for Memory Efficient CLIP Training".
+Official PyTorch implementation of the paper "[DisCo-CLIP: A Distributed Contrastive Loss for Memory Efficient CLIP Training](https://arxiv.org/pdf/2304.08480.pdf)".
 
 ![DisCo-CLIP](https://github.com/IDEA-Research/DisCo-CLIP/blob/chenyihao/DisCo-CLIP.png)
 
