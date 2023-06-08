@@ -13,7 +13,7 @@ pip install -e .
 
 
 ### Usage
-We implemented our method using `disco.Gather` , which is easy to use. more detail about `disco.Gather`  in [gather.py](https://www.a.com)
+We implemented our method using `disco.Gather` , which is easy to use. more detail about `disco.Gather`  in [gather.py]([https://www.a.com](https://github.com/IDEA-Research/DisCo-CLIP/blob/main/disco/gather.py))
 
 ```python
 
