@@ -9,7 +9,6 @@ setuptools.setup(
     url="https://github.com/IDEA-Research/DisCo-CLIP",
     packages=setuptools.find_packages(),
     python_requires=">=3.8",
-    install_requires=[
-        "torch>=1.7",],
+    install_requires=[],
     extras_require={},
 )
