@@ -10,7 +10,6 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     python_requires=">=3.8",
     install_requires=[
-        "torch>=1.7",
-    ],
+        "torch>=1.7",],
     extras_require={},
 )
