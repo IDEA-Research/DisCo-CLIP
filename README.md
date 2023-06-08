@@ -11,6 +11,7 @@ pip install -e .
 
 
 ### Usage
+We implemented our method using `disco.Gather` , which is easy to use. more detail about `disco.Gather`  in [gather.py](https://www.a.com)
 
 ```python
 
@@ -36,5 +37,17 @@ loss.backward()
 
 
 ```
-more detail about `disco.Gather`  in 
 
+
+### Citation
+If you find this repository helpful, please consider citing:
+
+```
+@Article{chen2023discoclip,
+  author  = {Yihao Chen and Xianbiao Qi and Jianan Wang and Lei Zhang},
+  title   = {DisCo-CLIP: A Distributed Contrastive Loss for Memory Efficient CLIP Training},
+  journal = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year    = {2023},
+}
+
+```
