@@ -66,8 +66,8 @@ def main(gpu, ngpus_per_node, dist_url):
                                     world_size=ngpus_per_node, rank=gpu)
 
     device = torch.device(f"cuda:{gpu}")
-
-    mini_bs = 32
+    torch.cuda.set_device(gpu)
+    mini_bs = 1024
     dim = 512
 
     criterion_img = torch.nn.CrossEntropyLoss(reduction='none')
@@ -103,8 +103,8 @@ def main_disco(gpu, ngpus_per_node, dist_url):
     dist.init_process_group(backend='nccl', init_method=dist_url,
                                     world_size=ngpus_per_node, rank=gpu)
     device = torch.device(f"cuda:{gpu}")
-
-    bs = 32
+    torch.cuda.set_device(gpu)
+    bs = 1024
     dim = 512
 
     criterion_img = torch.nn.CrossEntropyLoss(reduction='mean')
@@ -148,8 +148,8 @@ def main_disco_gather(gpu, ngpus_per_node, dist_url):
                                     world_size=ngpus_per_node, rank=gpu)
 
     device = torch.device(f"cuda:{gpu}")
-
-    bs = 32
+    torch.cuda.set_device(gpu)
+    bs = 1024
     dim = 512
     rank = torch.distributed.get_rank()
 
@@ -187,13 +187,15 @@ def test():
 
     print("origin clip:")
     mp.spawn(main, nprocs=ngpus_per_node, args=(ngpus_per_node, dist_url))
+    torch.cuda.empty_cache()
 
     print("disco clip:")
     mp.spawn(main_disco, nprocs=ngpus_per_node, args=(ngpus_per_node, dist_url))
+    torch.cuda.empty_cache()
 
     print("disco clip gather:")
     mp.spawn(main_disco_gather, nprocs=ngpus_per_node, args=(ngpus_per_node, dist_url))
-
+    torch.cuda.empty_cache()
 
 if __name__ == '__main__':
     test()
